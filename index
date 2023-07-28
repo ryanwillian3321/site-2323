@@ -1,64 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Jogo 2D com Mapa e Colisão</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.60.0/phaser.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-    }
-    canvas {
-      display: block;
-    }
-  </style>
+  <title>Ryan - Site Pessoal</title>
 </head>
 <body>
-  <script>
-    const config = {
-      type: Phaser.AUTO,
-      width: 800,
-      height: 600,
-      scene: {
-        preload: preload,
-        create: create,
-        update: update
-      }
-    };
-
-    const game = new Phaser.Game(config);
-
-    function preload() {
-      this.load.image('player', 'path/to/player.png');
-      this.load.image('ground', 'path/to/ground.png');
-    }
-
-    function create() {
-      this.player = this.physics.add.sprite(100, 100, 'player');
-      this.player.setCollideWorldBounds(true);
-
-      this.ground = this.physics.add.staticGroup();
-      this.ground.create(400, 550, 'ground').setScale(2).refreshBody();
-
-      this.physics.add.collider(this.player, this.ground);
-    }
-
-    function update() {
-      const cursors = this.input.keyboard.createCursorKeys();
-
-      if (cursors.left.isDown) {
-        this.player.setVelocityX(-200);
-      } else if (cursors.right.isDown) {
-        this.player.setVelocityX(200);
-      } else {
-        this.player.setVelocityX(0);
-      }
-
-      if (cursors.up.isDown && this.player.body.touching.down) {
-        this.player.setVelocityY(-400);
-      }
-    }
-  </script>
+  <div style="text-align: center; padding-top: 100px;">
+    <h1>Ryan</h1>
+    <p>Yag e Ordep, o xiame é muito bom</p>
+    <p>Entre em contato: <a href="mailto:ryanwillianrl@gmail.com">ryanwillianrl@gmail.com</a></p>
+  </div>
 </body>
 </html>
-
